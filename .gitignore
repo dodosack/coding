@@ -1,0 +1,33 @@
+# Ignoriere alle .exe-Dateien
+*.exe
+
+# Ignoriere alle VS Code Konfigurationsdateien
+.vscode/
+
+# Ignoriere temporäre Build-Dateien und Compiler-Dateien
+*.obj
+*.o
+*.out
+*.dll
+*.pdb
+*.ilk
+*.idb
+*.log
+*.suo
+*.cache
+*.user
+*.ncb
+*.sdf
+*.db
+
+# Ignoriere alle `bin` und `obj` Ordner (bei C++/C#-Projekten)
+bin/
+obj/
+
+# Ignoriere CMake Build-Verzeichnisse
+CMakeCache.txt
+CMakeFiles/
+
+# Falls du Visual Studio benutzt:
+.vs/
+*.vcxproj.user
