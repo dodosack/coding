@@ -1,0 +1,13 @@
+BasedOnStyle:  LLVM  # Oder ein anderer Stil, den du bevorzugst
+IndentWidth:   4
+ColumnLimit:   0
+UseTab:        Never
+BreakBeforeBraces: Custom
+AllowShortIfStatementsOnASingleLine: Never
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+PointerAlignment: Left
+
+# 💡 WICHTIGE EINSTELLUNGEN FÜR ABSÄTZE:
+KeepEmptyLinesAtTheStartOfBlocks: true  # Erhält leere Zeilen am Anfang eines Code-Blocks
+MaxEmptyLinesToKeep: 5                  # Erhält bis zu 2 aufeinanderfolgende leere Zeilen

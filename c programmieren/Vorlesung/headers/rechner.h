@@ -1,0 +1,1 @@
+int rechner(int zahl1, int zahl2);
