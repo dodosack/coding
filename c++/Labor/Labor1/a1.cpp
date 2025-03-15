@@ -7,7 +7,7 @@ using namespace std;
 enum class Object {
     ROCK = 1, // Damit es bei  1 begint
     SCISSORS,
-    PAPER
+    PAPER 
 };
 
 // Aufzählungstyp für mögliche Spielausgänge
@@ -18,6 +18,8 @@ enum class Result { // da es ein ENUM CLASS ist choice nicht numerisch
     PLAYER_TWO_WINS,
     DRAW
 };
+
+
 
 // Struktur für einen Spieler bestehend aus Name und Wahl des Spielers
 struct Player {
