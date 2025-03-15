@@ -1,2 +1,2 @@
 # programmingg
-my personal c coding collection 
+my personal coding collection from HS Esslingen 
