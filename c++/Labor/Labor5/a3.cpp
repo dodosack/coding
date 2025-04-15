@@ -90,10 +90,12 @@ int main(int argc, char* argv[]) {
 }
 
 // Aufgabe c)
-// Funktion      | überlädt, verdeckt oder redefiniert.| Funktion
-//-------------------------------------------------------------------
-// class B : public A                                     Class A{
-//  a.method1(int i);          redefiniert                    a.method(int i)
-// a.method1(int i);          verdeckt, überlädt                        a.method( string s)
-//
-//
+// Aufgabe c) – Tabelle:
+
+// Funktion in Klasse B           | Konzept        | Ursprüngliche Funktion in A
+// ------------------------------|----------------|------------------------------
+// method_2(int)                 | verdeckt       | method_2(double), method_2(string)
+// method_3(string)              | redefiniert    | method_3(string)
+// method_2(double), method_2(string) | überladen | (in Klasse A selbst)
+
+// method_1 goanix

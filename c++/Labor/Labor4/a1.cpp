@@ -59,16 +59,15 @@ class Customer {
   public:
     // mit konstrukter automatisch inkrementieren
     Customer(std::string name = "Unbekannt", int age = 0, std::string location = "Unbekannt")
-  : _name(name),            //WICHTIG SELBE RHEINFOLGE WIE OBEN SONST FEHLER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-    _location(location),
-    _age(age),
-    _business_done(0.0),
-    _transaction_count(0)
-{
-    _id = _s_id_generator;
-    _s_count++;
-    _s_id_generator++;
-}
+        : _name(name), // WICHTIG SELBE RHEINFOLGE WIE OBEN SONST FEHLER!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          _location(location),
+          _age(age),
+          _business_done(0.0),
+          _transaction_count(0) {
+        _id = _s_id_generator;
+        _s_count++;
+        _s_id_generator++;
+    }
 
 
     ~Customer() {
