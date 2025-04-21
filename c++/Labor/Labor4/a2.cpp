@@ -65,15 +65,14 @@ class Point {
 
     void move(double dx, double dy) {
         _x += dx;
-        _y+= dy;
-}
-
-void print(bool flag = true) {
-    cout << "(" << _x << ", " << _y << ")";
-    if (flag) {
-    cout<< endl;
+        _y += dy;
     }
-    
+
+    void print(bool flag = true) {
+        cout << "(" << _x << ", " << _y << ")";
+        if (flag) {
+            cout << endl;
+        }
     }
 };
 
@@ -85,7 +84,7 @@ class Circle {
     double _radius;
 
   public:
-    Circle(Point p , double radius = 1.0) {// wichtig sonst ist radius undefiniert
+    Circle(Point p, double radius = 1.0) { // wichtig sonst ist radius undefiniert
 
         _centre.set_x(p.get_x());
         _centre.set_y(p.get_y());
@@ -103,22 +102,21 @@ class Circle {
     // set methoden
     void set_centre(Point centre) {
         _centre = centre;
-        
+
         // kein extra kopierkonstruktor notwendig da keine pointer oder soo
     }
     void set_radius(double radius) {
         _radius = radius;
     }
     void move(double dx, double dy) { // lokal????
-        _centre.move( dx,  dy);
+        _centre.move(dx, dy);
     }
-    void print(bool flag = true) {// ausgabe auf eine nachkommastelle minimireren
-        cout << "[(" << _centre.get_x() << ", " << _centre.get_y() << "), "<< _radius<< "]" ;
+    void print(bool flag = true) { // ausgabe auf eine nachkommastelle minimireren
+        cout << "[(" << _centre.get_x() << ", " << _centre.get_y() << "), " << _radius << "]";
         if (flag) {
-        cout<< endl;
+            cout << endl;
         }
-        
-        }
+    }
 };
 
 

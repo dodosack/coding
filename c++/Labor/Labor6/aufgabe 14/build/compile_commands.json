@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\EmployeeManagement.dir\\main.cpp.obj -c \"C:\\Users\\adam8\\OneDrive\\programmieren\\coding\\c++\\Labor\\Labor6\\aufgabe 14\\main.cpp\"",
+  "file": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/main.cpp",
+  "output": "CMakeFiles/EmployeeManagement.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\EmployeeManagement.dir\\Employee.cpp.obj -c \"C:\\Users\\adam8\\OneDrive\\programmieren\\coding\\c++\\Labor\\Labor6\\aufgabe 14\\Employee.cpp\"",
+  "file": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/Employee.cpp",
+  "output": "CMakeFiles/EmployeeManagement.dir/Employee.cpp.obj"
+},
+{
+  "directory": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\EmployeeManagement.dir\\Manager.cpp.obj -c \"C:\\Users\\adam8\\OneDrive\\programmieren\\coding\\c++\\Labor\\Labor6\\aufgabe 14\\Manager.cpp\"",
+  "file": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/Manager.cpp",
+  "output": "CMakeFiles/EmployeeManagement.dir/Manager.cpp.obj"
+},
+{
+  "directory": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\EmployeeManagement.dir\\Worker.cpp.obj -c \"C:\\Users\\adam8\\OneDrive\\programmieren\\coding\\c++\\Labor\\Labor6\\aufgabe 14\\Worker.cpp\"",
+  "file": "C:/Users/adam8/OneDrive/programmieren/coding/c++/Labor/Labor6/aufgabe 14/Worker.cpp",
+  "output": "CMakeFiles/EmployeeManagement.dir/Worker.cpp.obj"
+}
+]
