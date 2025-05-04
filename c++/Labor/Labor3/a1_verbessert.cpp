@@ -25,7 +25,7 @@
 // Destruktor Student: Markus Mustermann
 // Destruktor Employee: Erika Mustermann
 // Destruktor Employee: Max Mustermann
-// Destruktor Student: Max Mustermann 
+// Destruktor Student: Max Mustermann
 
 
 #include <iostream>
@@ -38,14 +38,16 @@ class Student {
 
   public:
     // Konstruktor
-    Student(std::string first_name, std::string name) : _name{name}, _first_name{first_name} {
+    Student(std::string first_name, std::string name) : _name{name}, _first_name{first_name}
+// scope bereich deswegen initialiserungsliste 
+                                                        {
         std::cout << "Parametrisierter Konstruktor Student: " << _first_name << " " << _name << "\n";
     };
 
-    std::string get_Name() const{
+    std::string get_Name() const {
         return _name;
     };
-    std::string get_First_Name() const { return _first_name; };// hier const 
+    std::string get_First_Name() const { return _first_name; }; // hier const
 
     // Destruktor
     ~Student() {
@@ -90,10 +92,10 @@ class Employee {
     // KORREKTUR:
     Employee(const Student& student) {
         _first_name = student.get_First_Name();
-        _name       =  student.get_Name();
+        _name       = student.get_Name();
         std::cout << "Konvertierungskonstruktor Employee: " << _first_name << " " << _name << std::endl;
     }
-// fehler weil geter methoden nicht cosnst waren
+    // fehler weil geter methoden nicht cosnst waren
 
 
 
@@ -115,8 +117,8 @@ class Employee {
 
 int main() {
     Student  s1("Max", "Mustermann");
-    Employee e1( s1); // Hier wird der Konvertierungskonstruktor aufgerufen
-    Employee e2; // Standardkonstruktor
+    Employee e1(s1); // Hier wird der Konvertierungskonstruktor aufgerufen
+    Employee e2;     // Standardkonstruktor
     s1.print();
     s1.print_bool(true);
     e1.print();

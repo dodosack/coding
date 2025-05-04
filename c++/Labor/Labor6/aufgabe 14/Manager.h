@@ -11,3 +11,5 @@ public:
     double get_income() const;
     void print() const override;
 };
+
+

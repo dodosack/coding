@@ -94,11 +94,17 @@ int main(int argc, char* argv[])
 
 #include <iostream>
 using namespace std;
+
+
+
 int function(int i_1)
 {
     cout << "Funktion  1: i_1=" << i_1 << endl;
     return 0;
 }
+
+
+
 // identisch mit 1
 // void function(int i_1)
     // {

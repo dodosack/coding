@@ -39,8 +39,8 @@ void add_new_head_element(int id) {
 void add_new_tail_element(int id) {
     // Neues ListenElement erzeugen
     ListElement* p_new = new ListElement();
-    p_new->id = id;
-    p_new->p_next = nullptr;
+    p_new->id          = id;
+    p_new->p_next      = nullptr;
 
     // Wenn die Liste leer ist, wird das neue Element zum Kopf
     if (p_root == nullptr) {

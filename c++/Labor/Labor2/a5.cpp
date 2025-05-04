@@ -26,7 +26,7 @@ class Point {
   public:
     // methoden
     void print() {
-        std ::cout <<"print-Methode: "<<std::endl;
+        std ::cout << "print-Methode: " << std::endl;
         std::cout << "X = " << _x << std::endl;
         std::cout << "Y = " << _y << std::endl;
     };
