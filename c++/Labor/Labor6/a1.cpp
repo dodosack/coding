@@ -118,7 +118,7 @@ class B : virtual public A {
     int _b;
     B(int a = 0xBA, int b = 0xB) : A(a), _b(b) {}
 };
-
+ 
 class C1 : public B { // nicht virtual damit c1_b anders sein kann
   public:
     C1(int a = 0xC1A, int b = 0xC1B)
