@@ -5,12 +5,12 @@
 #include <linux/proc_fs.h> // Erzeugen und Verwalten von Dateien im /proc-Dateisystem
 #include <linux/seq_file.h> // Unterstützung für sequentielle Ausgaben in /proc
 
-
 #define MAX_SYSCALLS                                                           \
   6900 // Maximale Anzahl zum Zählen, um Überlauf zu verhindern
 
-MODULE_LICENSE("GPL");  // Lizenz des Moduls (verhindert Kernel-Taint)
-MODULE_AUTHOR("Nabil"); // Autor des Moduls (wird in modinfo angezeigt)
+MODULE_LICENSE("GPL"); // Lizenz des Moduls (verhindert Kernel-Taint)
+MODULE_AUTHOR(
+    "ADAAAAAAMMMMMMMMMM"); // Autor des Moduls (wird in modinfo angezeigt)
 MODULE_DESCRIPTION("Track read, write, open, close, mkdir syscalls using "
                    "kprobes"); // Kurzbeschreibung
 MODULE_VERSION("2.0");         // Versionsnummer
