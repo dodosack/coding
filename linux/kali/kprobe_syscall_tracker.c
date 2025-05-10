@@ -9,6 +9,10 @@
   6900 // Maximale Anzahl zum Zählen, um Überlauf zu verhindern
 
 MODULE_LICENSE("GPL"); // Lizenz des Moduls (verhindert Kernel-Taint)
+
+// key  nicht signiert mit official key vom 
+
+
 MODULE_AUTHOR(
     "ADAAAAAAMMMMMMMMMM"); // Autor des Moduls (wird in modinfo angezeigt)
 MODULE_DESCRIPTION("Track read, write, open, close, mkdir syscalls using "
