@@ -434,13 +434,12 @@ void Medium::print() const {
     std::cout << "Jahr:          " << _year_of_publication << endl;
     cout << "Ausleiher:     ";
     if (!_lender) {
-        cout << "-"<<endl;
+        cout << "-" << endl;
     } else {
         // get_lender() ist ein Pointer auf eine Person also nein lender ist eine person also geht da bro
 
-        cout << _lender->get_name() << " von: " << _date_of_check_out << " bis: " << _date_of_return<< endl;
+        cout << _lender->get_name() << " von: " << _date_of_check_out << " bis: " << _date_of_return << endl;
     }
-    
 }
 
 Medium* Medium::clone() const {
@@ -556,12 +555,17 @@ void Library::procure_medium(Medium& m) {
 void Library::search_medium(string search_word) {
     cout << "Suche nach \"" << search_word << "\" Ergebnis:" << endl;
     cout << "---------------------------------------" << endl;
+    cout << endl;
     for (unsigned int i = 0; i < media.size(); i++) {
         if (media[i]->get_title().find(search_word) != string::npos) {
+            cout << "Medium " << i << ":" << endl;
             media[i]->print();
             cout << endl;
+        }
     }
     cout << "---------------------------------------" << endl;
+    cout << endl;
+
 }
 void Library::check_out_medium(size_t number, Person& p, Date d) {
     if (number < media.size()) {
@@ -573,12 +577,15 @@ void Library::check_out_medium(size_t number, Person& p, Date d) {
 void Library::print() const {
     cout << "Bibliothekskatalog:" << endl;
     cout << "---------------------------------------" << endl;
+    cout << endl;
     for (unsigned int i = 0; i < media.size(); i++) {
         cout << "Medium " << i << ":" << endl;
         media[i]->print();
         cout << endl;
     }
     cout << "---------------------------------------" << endl;
+    cout << endl;
+    
 }
 
 // hier Konstruktor und Methoden
@@ -600,8 +607,10 @@ int main(int argc, char* argv[]) {
     DVD  d3("Chuck", "Warner Bros (Universal Pictures)", 2013, 3774);
     // Ein Buch und eine DVD ausgeben
     b1.print();
-    cout<<endl;
+    cout << endl;
     d1.print();
+    cout << endl;
+    cout << endl;
     // Kopien der Bücher und DVDs (Medien) in die Bibliothek
     // einfügen
     library.procure_medium(b1);
