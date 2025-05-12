@@ -2,7 +2,8 @@
 // Operatoren
 
 // Ihre Aufgabe:
-// Implementieren Sie den Konstruktor und die Operatoren, die für die Klasse Datum angegeben sind. Sie können zur Vereinfachung davon ausgehen, dass ein Jahr 360 Tage und jeder Monat 30 Tage hat.
+// Implementieren Sie den Konstruktor und die Operatoren, die für die Klasse Datum angegeben sind.
+// Sie können zur Vereinfachung davon ausgehen, dass ein Jahr 360 Tage und jeder Monat 30 Tage hat.
 
 // Das angegebene Hauptprogramm soll folgende Ausgabe erzeugen:
 
