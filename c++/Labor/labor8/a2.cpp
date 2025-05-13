@@ -640,4 +640,4 @@ int main(int argc, char* argv[]) {
     library.check_out_medium(8, p3, "14.03.2023");
     // Bestand der Bibliothek ausgeben
     library.print();
-};
+}

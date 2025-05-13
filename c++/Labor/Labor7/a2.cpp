@@ -78,6 +78,7 @@ class Polygonline {
 // Implementierung Konstruktor
 Polygonline::Polygonline() {};
 // brauche ich nciht wird extra machen
+
 Polygonline::Polygonline(Point& p) {
     _points.push_back(p);
 }
@@ -103,10 +104,10 @@ void Polygonline::move(double dx, double dy) {
 };
 void Polygonline::print(bool nl) {
     cout << "|";
-
+                // int i geht nicht weil es beim vergleich zu problemem kommt bro
     for (vector<Point>::size_type i = 0; i < _points.size(); ++i) {
-        _points[i].print(false);
-        if (i < _points.size() - 1) {
+        _points[i].print(false);// aufruf der print von point 
+        if (i < _points.size() - 1) {//damit am ende kein - steht
             cout << " - ";
         }
     }

@@ -16,6 +16,7 @@
 using namespace std;
 
 const unsigned int length = 10;
+// lengt muss intialisert sein sonst dynamisch
 
 // hier die Funktion 'sort' implementieren
 
