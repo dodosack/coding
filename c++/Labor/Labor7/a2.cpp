@@ -129,7 +129,11 @@ int main(int argc, char* argv[]) {
     l1.print();
     l2.print();
     l1.add_point(p1).add_point(p2);
+    // erster teil ist wegen rückgabewert ein objekt un dadurch kann man .add_point machen
+    
     l2.add_point(p4).add_point(p5);
+    // doppeltes anhängen wegen rückgabewert
+
     cout << "Ausgabe 2:" << endl;
     l1.print();
     l2.print();

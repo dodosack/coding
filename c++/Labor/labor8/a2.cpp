@@ -350,14 +350,15 @@ Date::Date(const string& s) {
     ss >> _day >> punkt >> _month >> punkt >> _year;
 };
 
-Date::Date(const char* s) {
 
-    // hier Konvertierkonstruktor für C-String
+Date::Date(const char* s) : Date(string(s)){
 
-    char         punkt;
-    stringstream ss(s); // es wird als  streameingabe interpretiert also wie cin aus der Tastatur
-    // Initialisiert einen Stringstream mit dem Eingabestring
-    ss >> _day >> punkt >> _month >> punkt >> _year;
+    // // hier Konvertierkonstruktor für C-String
+
+    // char         punkt;
+    // stringstream ss(s); // es wird als  streameingabe interpretiert also wie cin aus der Tastatur
+    // // Initialisiert einen Stringstream mit dem Eingabestring
+    // ss >> _day >> punkt >> _month >> punkt >> _year;
 };
 
 

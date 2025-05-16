@@ -29,6 +29,7 @@
 
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 void p(string s, bool nl = true) {
@@ -64,7 +65,7 @@ class C : public B {
   public:
     void         method_1() { p("C::method_1()"); }
     void         method_2() override { p("C::method_2()"); }
-    virtual void method_3() { p("C::method_3()"); }
+    virtual void method_3() { p("C::method_3()"); } // virtual
     void         method_4() override {
         p("C::method_4()", false);
         method_2();
