@@ -237,7 +237,7 @@ int main(int argc, char* argv[]) {
     } catch (MyException& e) {// const machen damit die referenz nciht veröndert wird 
         cout<< e.what()<<endl;
 
-    } catch (const exception& e) {
+    } catch (const exception& e) {//wichtig das wir mit referenz arbeiten 
           cout << "Standardausnahme: " << e.what() << endl;
     } catch (const string e) {
           cout << "String Exception: " << e << endl; // wichtig e weil es bereits ein string ist ein anonymes objekt
