@@ -45,7 +45,7 @@ class MyException : public exception {
         _fullMessage = "Fehler " + _exceptionname + " aufgetreten"
                                                     " in Datei " +
                        _filename +
-                       ", Zeile: " + to_string(_line+28 ) + ".";
+                       ", Zeile: " + to_string(_line + 28) + ".";
     }
 
     const char* what() const noexcept override {
@@ -128,7 +128,7 @@ class Zoo {
         // Nutzen Sie die Praeprozessormakros __LINE__ und __FILE__
         // HIER
         if (_name.length() < 4) {
-            throw MyException(__LINE__ , __FILE__, "'Zooname zu kurz'");
+            throw MyException(__LINE__, __FILE__, "'Zooname zu kurz'");
         }
 
         // Ansonsten, den 5. Buchstaben des Namens gross machen
@@ -156,17 +156,17 @@ class Zoo {
             const Animal* current_potential_elephant = dynamic_cast<const Elefant*>(&animal); // wichtig das man const beibehält beim casten und typ und die referenz ncit vergessen
             const Animal* current_potential_mouse    = dynamic_cast<const Mouse*>(&animal);
 
-            if ((last_potential_elephant && current_potential_mouse) || (last_potential_mouse && current_potential_elephant)) {
+            if ((last_potential_elephant != nullptr && current_potential_mouse) || (last_potential_mouse && current_potential_elephant)) { // nullptr
 
                 throw ElefantMeetsMouse(__LINE__, __FILE__);
             }
 
 
 
-                // KEIN ELSE SONST TUT ER DANACH NCIHT EINLESEN DU DUMMKOPF!!!!
-        } //else {_animals.push_back(animal.clone()); }
+            // KEIN ELSE SONST TUT ER DANACH NCIHT EINLESEN DU DUMMKOPF!!!!
+        } // else {_animals.push_back(animal.clone()); }
 
-_animals.push_back(animal.clone());
+        _animals.push_back(animal.clone());
 
 
         // sonst Tier hinzufuegen
@@ -219,7 +219,7 @@ int main(int argc, char* argv[]) {
                 break;
             default:
                 cout << "Fehlerhafte Eingabe!" << endl;
-                 return 1; // Programm beenden bei fehlerhafter Eingabe
+                return 1; // Programm beenden bei fehlerhafter Eingabe
             }
 
             cout << endl;
@@ -234,30 +234,30 @@ int main(int argc, char* argv[]) {
         cout << e.what() << endl;
 
 
-    } catch (MyException& e) {// const machen damit die referenz nciht veröndert wird 
-        cout<< e.what()<<endl;
+    } catch (MyException& e) { // const machen damit die referenz nciht veröndert wird
+        cout << e.what() << endl;
 
-    } catch (const exception& e) {//wichtig das wir mit referenz arbeiten 
-          cout << "Standardausnahme: " << e.what() << endl;
-    } catch (const string e) {
-          cout << "String Exception: " << e << endl; // wichtig e weil es bereits ein string ist ein anonymes objekt
+    } catch (const exception& e) { // wichtig das wir mit referenz arbeiten
+        cout << "Standardausnahme: " << e.what() << endl;
+    } catch (const string e) {// anschauen 
+        cout << "String Exception: " << e << endl; // wichtig e weil es bereits ein string ist ein anonymes objekt
     } catch (...) {
-         cout << "Unbekannte Ausnahme aufgetreten." << endl;
-        }
-        // MyException auffangen und ausgeben
-        // HIER
+        cout << "Unbekannte Ausnahme aufgetreten." << endl;
+    }
+    // MyException auffangen und ausgeben
+    // HIER
 
 
-        // Alle anderen Standardausnahmen auffangen und ausgeben
-        // HIER
+    // Alle anderen Standardausnahmen auffangen und ausgeben
+    // HIER
 
 
-        // Alle Strings auffangen und ausgeben
-        // HIER
+    // Alle Strings auffangen und ausgeben
+    // HIER
 
 
-        // Alle anderen Ausnahmen auffangen
-        // HIER
+    // Alle anderen Ausnahmen auffangen
+    // HIER
 
 
     return 0;

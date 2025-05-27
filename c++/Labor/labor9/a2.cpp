@@ -80,23 +80,25 @@ class AuthenticationResult {
     }
 };
 
-class IAuthenticationProcedure {
+class IAuthenticationProcedure { // kein nutzen des interfaces
+
   public:
     virtual AuthenticationResult authenticate() = 0;
     virtual ~IAuthenticationProcedure() {}
 };
 
 class Client {
-    IAuthenticationProcedure* _authentication_procedure;
+    IAuthenticationProcedure* _authentication_procedure; //  von typ interface 
 
   public:
-    void set_authentication_procedure(IAuthenticationProcedure* p) {
+    void set_authentication_procedure(IAuthenticationProcedure* p) {// von welchem erbenden typ abhängig 
         _authentication_procedure = p;
     };
 
     void execute() {
         if (_authentication_procedure) {
-            AuthenticationResult result = _authentication_procedure->authenticate();
+            AuthenticationResult result = _authentication_procedure->authenticate(); // hier wird das interface gebutz mit authenticate
+            
 
             if (result.get_c_is_authenticated()) {
                 cout << "Das Programm wird ausgeführt für " << result.get_c_username() << "." << endl;

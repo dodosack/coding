@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
         cout << right<< noshowpos<<std::dec << setw(3) << k; // normal lassen aber man muss auf
         cout << std::setw(4) << nouppercase<< std::oct << std::showbase << right << k;
         cout << std::hex << setw(5) << k << " ";
-        cout << setw(7) << left << setfill('+') << string(k % 5 + 1, '*') << " ";
+        cout << setw(7) << left << setfill('+') << string(k % 5 + 1, '*') << " ";// bestimme anzahl an char ausgeben 
         
         cout << setw(9) <<setfill(' ')<<fixed<< internal<< setprecision(3)<< showpos<<  d;
         cout << noshowpos<<uppercase<< right<<scientific<<setw(11) << d;
