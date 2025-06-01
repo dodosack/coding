@@ -65,7 +65,9 @@ public:
 class ISubscriber
 {
 public:
-    virtual void update(const string& message) = 0;
+  virtual void update(const string& message) = 0;
+  virtual ~ISubscriber() {}  // WICHTIG!
+
 };
 
 class Customer : public ISubscriber
