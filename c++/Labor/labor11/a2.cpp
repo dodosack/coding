@@ -39,143 +39,121 @@
 // Customer 102: neue Nachricht verfügbar --> Neue Artikel vom Typ iPhone verfügbar.
 // GoldCustomer 3: neue Nachricht verfügbar --> Neue Artikel vom Typ iPhone verfügbar.
 // Es sind 5 Artikel vom Typ Galaxy verfügbar. Es können nicht 8 Artikel verkauft
+#include <exception>
 #include <iostream>
 #include <list>
-#include <string>
 #include <map>
-#include <exception>
+#include <string>
+
 
 using namespace std;
 
-class OutOfStockException : public exception
-{
+class OutOfStockException : public exception {
     int _inStock;
     int _needed;
 
-public:
+
+  public:
     OutOfStockException(int inStock, int needed) : _inStock(inStock), _needed(needed) {}
 
-    const char* what() const noexcept override
-    {
+    const char* what() const noexcept override {
+        
         cout << "Es sind " << _inStock << " Artikel vom Typ Galaxy verfügbar. Es können nicht " << _needed << " Artikel verkauft werden." << endl;
         return "";
     }
 };
 
-class ISubscriber
-{
-public:
-  virtual void update(const string& message) = 0;
-  virtual ~ISubscriber() {}  // WICHTIG!
-
+class ISubscriber {
+  public:
+    virtual void update(const string& message) = 0;
+    virtual ~ISubscriber() {} // WICHTIG!
 };
 
-class Customer : public ISubscriber
-{
+class Customer : public ISubscriber {
     static int _id_generator;
-    int id;
+    int        id;
 
-public:
-    Customer()
-    {
+  public:
+    Customer() {
         id = _id_generator++;
     }
 
-    void update(const string& message) override
-    {
+    void update(const string& message) override {
         cout << "Customer " << id << ": neue Nachricht verfügbar --> " << message << endl;
     }
 };
 
-class GoldCustomer : public ISubscriber
-{
+class GoldCustomer : public ISubscriber {
     static int _id_generator;
-    int id;
+    int        id;
 
-public:
-    GoldCustomer()
-    {
+  public:
+    GoldCustomer() {
         id = _id_generator++;
     }
 
-    void update(const string& message) override
-    {
+    void update(const string& message) override {
         cout << "GoldCustomer " << id << ": neue Nachricht verfügbar --> " << message << endl;
     }
 };
 
-class Store
-{
-public:
-    void subscribe(ISubscriber* subscriber)
-    {
+class Store {
+  public:
+    void subscribe(ISubscriber* subscriber) {
         _subscribers.push_back(subscriber);
     }
 
-    void unsubscribe(ISubscriber* subscriber)
-    {
+    void unsubscribe(ISubscriber* subscriber) {
         _subscribers.remove(subscriber);
     }
 
-    void notify_subscribers(const string& message)
-    {
-        for (auto subscriber : _subscribers)
-        {
+    void notify_subscribers(const string& message) {
+        for (auto subscriber : _subscribers) {
             subscriber->update(message);
         }
     }
 
-    void deliver_products(const string& modell, unsigned int available)
-    {
+    void deliver_products(const string& modell, unsigned int available) {
         cout << "Vorrätige Artikel vom Typ " << modell << ": " << _product_availability[modell] << endl;
         cout << "Ausgelieferte Artikel vom Typ " << modell << ": " << available << endl;
         _product_availability[modell] += available;
         cout << "Neuer Bestand: " << _product_availability[modell] << endl;
 
-        if (available > 0 && _product_availability[modell] == available)
-        {
+        if (available > 0 && _product_availability[modell] == available) {
             notify_subscribers("Neue Artikel vom Typ " + modell + " verfügbar.");
         }
     }
 
-    void sell_products(const string& modell, unsigned int quantity)
-    {
-        if (_product_availability[modell] < quantity)
-        {
+    void sell_products(const string& modell, unsigned int quantity) {
+        if (_product_availability[modell] < quantity) {
             throw OutOfStockException(_product_availability[modell], quantity);
         }
 
-        if (_product_availability.find(modell) != _product_availability.end())
-        {
+        if (_product_availability.find(modell) != _product_availability.end()) {
             cout << "Vorrätige Artikel vom Typ " << modell << ": " << _product_availability[modell] << endl;
             cout << "Verkaufte Artikel vom Typ " << modell << ": " << quantity << endl;
             _product_availability[modell] -= quantity;
             cout << "Neuer Bestand: " << _product_availability[modell] << endl;
 
-            if (_product_availability[modell] == 0)
-            {
+            if (_product_availability[modell] == 0) {
                 notify_subscribers("Artikel vom Typ " + modell + " nicht mehr verfügbar");
             }
-        }
-        else
-        {
+        } else {
             cout << "Produkt nicht gefunden." << endl;
         }
     }
 
-private:
-    list<ISubscriber*> _subscribers;
-    map<string, unsigned int> _product_availability{ {"iPhone", 0}, {"Galaxy", 5} };
+  private:
+    list<ISubscriber*>        _subscribers;
+    map<string, unsigned int> _product_availability{{"iPhone", 0}, {"Galaxy", 5}};
 };
 
-int Customer::_id_generator = 101;
+int Customer::_id_generator     = 101;
 int GoldCustomer::_id_generator = 1;
 
-void manage_store()
-{
-    try
-    {
-        Store* store = new Store;
+void manage_store() {
+    try {
+        Store*       store      = new Store;
         ISubscriber* customer_1 = new Customer();
         store->subscribe(customer_1);
         ISubscriber* customer_2 = new GoldCustomer();
@@ -194,19 +172,14 @@ void manage_store()
         store->subscribe(customer_5);
         store->deliver_products("iPhone", 15);
         store->sell_products("Galaxy", 8);
-    }
-    catch (exception& e)
-    {
+    } catch (exception& e) {
         cout << e.what() << endl;
-    }
-    catch (...)
-    {
+    } catch (...) {
         cout << "Ein unbekannter Fehler ist aufgetreten." << endl;
     }
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
     manage_store();
     return 0;
 }
