@@ -112,10 +112,10 @@ Date::Date(const string& date) {
 
     if (date.length() <= 10) {
 
-        stringstream ss(date);
+        stringstream sss(date);
         char punkte;
 
-        ss >> _day >> punkte >> _month >> punkte >> _year;
+        sss >> _day >> punkte >> _month >> punkte >> _year;
 
     }
 }
