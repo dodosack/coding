@@ -27,7 +27,7 @@ using namespace std;
 // abstrakte klasse meal
 class Meal {
   protected:
-    array<std::string, 5> _belegung;
+    array<string, 5> _belegung;
     unsigned int          count = 0;
     string                _name;
 
